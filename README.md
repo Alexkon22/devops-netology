@@ -12,5 +12,13 @@
 - Логи crash.log и конфиги .terraformrc, terraform.rc
 
 
+
+
+
+
 ----
     ### Добавил строку в ветке Fix
+
+----
+
+добавил строку через Vs code 
