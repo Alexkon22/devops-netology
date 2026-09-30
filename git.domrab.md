@@ -27,11 +27,11 @@
   <details><summary><b> Текст Решения.</b> (нажмите, чтобы раскрыть)</summary>
 <br>
 
-  **Вопрос первый** 
+  **Вопрос Первый** 
+* Найдите полный хеш и комментарий коммита, хеш которого начинается на aefea.
  
-  * Результат получен Командой
-
-   ` git show aefea`
+ * **Результат получен Командой**
+    *   `git show aefea`
 
 
 Вывод:
@@ -39,23 +39,24 @@
  * Комментарий: `Update CHANGELOG.md`
 ---
 
-**Вопрос второй**
+
+**Вопрос Второй**
 
 * Какому тегу соответствует коммит 85024d3?
 
-* * Результат получен Командой
-      `git tag --points-at 85024d3`
+*  **Результат получен Командой**
+    * `git tag --points-at 85024d3`
 
  Вывод:
  Тег соответствия **v0.12.23**
 
  ---
-**ВопросТретий**
+**Вопрос Третий**
  
  * Сколько родителей у коммита b8d720? Напишите их хеши.
 
-   Результат получен Командой 
-   `git show --format=%P b8d720`
+ * **Результат получен Командой** 
+   *  `git show --format=%P b8d720`
 
    Вывод
    Два Родителя
@@ -69,8 +70,8 @@
  
 * Перечислите хеши и комментарии всех коммитов, которые были сделаны между тегами v0.12.23 и v0.12.24.
 
-* Результат Получен Командой
-  `git log v0.12.23..v0.12.24 --oneline`
+* **Результат Получен Командой**
+  *  `git log v0.12.23..v0.12.24 --oneline`
 
  Вывод:
 Перечисление Хешей и Комментариев 
@@ -87,6 +88,47 @@
 *225466bc3e Cleanup after v0.12.23 release
 ---
 
+**Вопрос Пятый**
+* Найдите коммит, в котором была создана функция `func providerSource`, её определение в коде выглядит
+    * так: `func providerSource(...)` (вместо троеточия перечислены аргументы).
+ 
+* **Результат Получен Командой**
+  * `git log -S "func providerSource" --oneline`
 
+
+* Вывод:
+  функция `func providerSource(...)`
+    * была создана в коммите **8c928e8358**
+  ---
+
+**Вопрос Шестой**
+* Найдите все коммиты, в которых была изменена функция `globalPluginDirs`
+
+* **Результат Получен Командой**
+  * `git log -L :globalPluginDirs:plugins.go v0.12.23 --oneline --no-patch`
+
+
+* Вывод
+* 78b1220558 Remove config.go and update things using its aliases
+* 52dbf94834 keep .terraform.d/plugins for discovery
+* 41ab0aef7a Add missing OS_ARCH dir to global plugin paths
+* 66ebff90cd move some more plugin search path logic to command
+* 8364383c35 Push plugin discovery down into command package
+
+  ---
+
+
+  **Вопрос Седьмой**
+* Кто автор функции `synchronizedWriters`
+
+* **Результат Получен Командой**
+  * `git log -S "synchronizedWriters" --format="%h | %an <%ae> | %s" --no-patch`
+
+ * Вывод 
+
+ **Автор Коммита**  
+* **Martin Atkins** `<mart@degeneration.co.uk>`, 
+
+  * Коммит `5ac311e2a9` — `main: synchronize writes to VT100-faker on Windows`.
 
   
